@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Heart } from "lucide-react";
+import heroImage from "@/assets/hero-dental.jpg";
 
 export default function HeroSection() {
   return (
@@ -27,11 +27,13 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Illustration placeholder */}
+        {/* Hero image */}
         <div className="flex-1 flex justify-center animate-fade-up-delay-2">
-          <div className="w-72 h-72 md:w-96 md:h-96 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-lg">
-            <Heart className="w-24 h-24 text-primary/40" strokeWidth={1} />
-          </div>
+          <img
+            src={heroImage}
+            alt="Modern dental clinic interior with teal chairs and natural light"
+            className="w-full max-w-lg rounded-3xl shadow-lg object-cover aspect-[16/10]"
+          />
         </div>
       </div>
     </section>

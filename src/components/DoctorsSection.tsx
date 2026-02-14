@@ -1,11 +1,14 @@
 import { useScrollReveal } from "@/components/useScrollReveal";
-import { User } from "lucide-react";
+import doctorSarah from "@/assets/doctor-sarah.jpg";
+import doctorMichael from "@/assets/doctor-michael.jpg";
+import doctorEmily from "@/assets/doctor-emily.jpg";
+import doctorJames from "@/assets/doctor-james.jpg";
 
 const doctors = [
-  { name: "Dr. Sarah Johnson", role: "General Dentist", exp: "12 Years" },
-  { name: "Dr. Michael Chen", role: "Orthodontist", exp: "10 Years" },
-  { name: "Dr. Emily Davis", role: "Oral Surgeon", exp: "15 Years" },
-  { name: "Dr. James Wilson", role: "Periodontist", exp: "8 Years" },
+  { name: "Dr. Sarah Johnson", role: "General Dentist", exp: "12 Years", img: doctorSarah },
+  { name: "Dr. Michael Chen", role: "Orthodontist", exp: "10 Years", img: doctorMichael },
+  { name: "Dr. Emily Davis", role: "Oral Surgeon", exp: "15 Years", img: doctorEmily },
+  { name: "Dr. James Wilson", role: "Periodontist", exp: "8 Years", img: doctorJames },
 ];
 
 export default function DoctorsSection() {
@@ -23,9 +26,7 @@ export default function DoctorsSection() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {doctors.map((d) => (
             <div key={d.name} className="bg-card border border-border rounded-2xl p-6 text-center hover:shadow-lg transition-shadow group">
-              <div className="w-24 h-24 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/10 transition-colors">
-                <User className="w-10 h-10 text-muted-foreground group-hover:text-primary transition-colors" />
-              </div>
+              <img src={d.img} alt={d.name} className="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all" />
               <h3 className="font-semibold text-foreground">{d.name}</h3>
               <p className="text-sm text-primary mt-1">{d.role}</p>
               <p className="text-xs text-muted-foreground mt-1">{d.exp} Experience</p>
